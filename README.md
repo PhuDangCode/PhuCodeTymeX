@@ -1,7 +1,5 @@
 # Currency Converter
 
-![App Icon](res/drawable/ic_launcher_foreground.png)
-
 Currency Converter is a feature-rich mobile application designed for real-time currency conversion and visualization. The app provides:
 
 - **Currency Conversion**: Supports conversions between various currencies like USD, EUR, VND, etc., using real-time exchange rates fetched from an API.
