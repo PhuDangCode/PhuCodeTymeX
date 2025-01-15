@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.currencyconverter">
+
+    <!-- Permissions -->
+    <!-- Required to access the internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Optional: Add other permissions if required in the future -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Material3.DayNight"
+        tools:targetApi="34"> <!-- Ensure compatibility with API 34 -->
+
+        <!-- Main Activity definition -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"> <!-- Required for activities with intent-filters -->
+
+            <!-- Define the launcher intent -->
+            <intent-filter>
+                <!-- Marks this activity as the entry point -->
+                <action android:name="android.intent.action.MAIN" />
+                <!-- Allows it to appear in the app launcher -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Add other activities or services if necessary -->
+    </application>
+
+</manifest>

@@ -1,0 +1,171 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <!-- Purple Header Background -->
+    <View
+        android:id="@+id/purpleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/purple_500"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Title in Purple Header -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CURRENCY CONVERTER"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/purpleHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- White Frame -->
+    <LinearLayout
+        android:id="@+id/whiteFrame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_white_frame"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="@+id/purpleHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="16dp"
+        android:elevation="4dp">
+
+        <!-- Input Section -->
+        <LinearLayout
+            android:id="@+id/inputSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/fromFlagImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_usd_flag"
+                android:background="@drawable/circle_flag_background"
+                android:padding="4dp" />
+
+            <Spinner
+                android:id="@+id/fromSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="8dp"
+                android:minHeight="48dp"
+                android:background="@android:color/transparent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="to"
+                android:textColor="@color/text_light"
+                android:textSize="16sp"
+                android:layout_marginHorizontal="8dp" />
+
+            <ImageView
+                android:id="@+id/toFlagImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_vnd_flag"
+                android:background="@drawable/circle_flag_background"
+                android:padding="4dp" />
+
+            <Spinner
+                android:id="@+id/toSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="8dp"
+                android:minHeight="48dp"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
+
+        <!-- Amount EditText -->
+        <EditText
+            android:id="@+id/amountEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter amount"
+            android:inputType="numberDecimal"
+            android:background="@drawable/rounded_input"
+            android:padding="12dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Convert Button -->
+        <Button
+            android:id="@+id/convertButton"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:text="Convert"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp" />
+
+        <!-- Result TextView -->
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12.00 USD = 19.34 AUD"
+            android:textColor="@color/purple_500"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginTop="12dp" />
+    </LinearLayout>
+
+    <!-- Line Chart -->
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/whiteFrame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp" />
+
+    <!-- Ranking Section -->
+    <TextView
+        android:id="@+id/rankingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ranking"
+        android:textColor="@color/text_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/lineChart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/rankingViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rankingTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

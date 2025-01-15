@@ -1,0 +1,38 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">CurrencyConverter</string>
+
+    <!-- Currency Codes Array -->
+    <string-array name="currency_codes">
+        <item>USD</item>
+        <item>EUR</item>
+        <item>JPY</item>
+        <item>GBP</item>
+        <item>VND</item>
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>CNY</item>
+        <item>HKD</item>
+        <item>KRW</item>
+        <item>INR</item>
+        <item>SGD</item>
+        <item>MYR</item>
+        <item>IDR</item>
+        <item>PHP</item>
+        <item>THB</item>
+        <item>ZAR</item>
+        <item>NZD</item>
+        <item>BRL</item>
+        <item>RUB</item>
+    </string-array>
+
+
+    <!-- Error and Information Messages -->
+    <string name="error_invalid_amount">Please enter a valid amount.</string>
+    <string name="result_text">%1$.2f %2$s</string>
+    <string name="conversion_info">1 %1$s = %2$.2f %3$s</string>
+    <string name="error_fetch_rates">Failed to fetch rates.</string>
+    <string name="error_failure">Error: %1$s</string>
+    <string name="chart_description">Trend: %1$s to %2$s</string>
+</resources>
